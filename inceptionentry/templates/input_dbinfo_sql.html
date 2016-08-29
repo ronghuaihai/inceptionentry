@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Please choose the dbinfo and input the sql text</title>
+<!--    <link ref="sytlesheet" href="/semantic/dist/semantic.min.css"> !-->
+    <style type="text/css">
+    ul.errorlist {
+    margin: 0;
+    padding: 0;
+    }
+    .errorlist li {
+    background-color: red;
+    color: white;
+    display: block;
+    font-size: 10px;
+    margin: 0 0 3px;
+    padding: 4px 5px;
+    }
+    </style>
+    <link rel="stylesheet" type="text/css" href="/static/css/semantic.min.css">
+    <script src="/static/css/semantic.min.js"></script>
+</head>
+<body>
+ <div class="ui borderless main menu">
+    <div class="ui text container">
+      <div href="#" class="header item">
+        <img class="logo" src="/static/images/logo.png">
+        Project Name
+      </div>
+      <a href="#" class="item">Blog</a>
+      <a href="#" class="item">Articles</a>
+      <a href="#" class="ui right floated dropdown item">
+        Dropdown <i class="dropdown icon"></i>
+        <div class="menu">
+          <div class="item">Link Item</div>
+          <div class="item">Link Item</div>
+          <div class="divider"></div>
+          <div class="header">Header Item</div>
+          <div class="item">
+            <i class="dropdown icon"></i>
+            Sub Menu
+            <div class="menu">
+              <div class="item">Link Item</div>
+              <div class="item">Link Item</div>
+            </div>
+          </div>
+          <div class="item">Link Item</div>
+        </div>
+      </a>
+    </div>
+  </div>
+<div class="ui pointing menu">
+  <a class="active item">
+    Home
+  </a>
+  <a class="item">
+    Messages
+  </a>
+  <a class="item">
+    Friends
+  </a>
+  <div class="right menu">
+    <div class="item">
+      <div class="ui transparent icon input">
+        <input placeholder="Search..." type="text">
+        <i class="search link icon"></i>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ui segment">
+  <p></p>
+</div>
+     <h1>DBINFO</h1>
+     <h2>PLEASE INPUT DBINFO AND SQLTEXT </h2>
+     {% if form.errors %}
+         <p style="color: red;">
+
+Please correct the error{{ form.errors|pluralize }} below.
+</p>
+{% endif %}
+
+
+          <form action="/inputdbsql/" method="POST" >
+           {% csrf_token %}
+          <table>
+
+              {{ form.as_table }}
+
+          </table>
+
+          <button>submit review</button>
+
+          </form>
+
+
+<!--  <script src="/semantic/dist/semantic.min.js"></script> !-->
+</body>
+</html>
