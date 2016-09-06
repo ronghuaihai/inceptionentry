@@ -3,20 +3,91 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>This is base html</title>
-    <link href="{% static 'css/semantic.min.css' %}" type="text/css" rel="stylesheet">
+    {% block title %}
+        <title>This is base html</title>
+    {% endblock %}
+    {% block cssstyle %}
+         <link href="{% static 'css/semantic.min.css' %}" type="text/css" rel="stylesheet">
+         <link href="{% static 'css/base-design.css' %}"  type="text/css" rel="stylesheet">
+         <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    {% endblock %}
+    {% block javascript %}
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'components/form.js' %}"></script>
     <script src="{% static 'components/transition.js' %}"></script>
     <script src="{% static 'js/rainyday.min.js' %}"></script>
     <script src="{% static 'js/semantic.min.js' %}"></script>
+    <script src="{% static 'js/base-design.js' %}"></script>
+    {% endblock %}
+
 </head>
 <body>
-<p>this is logo</p>
-<div class="ui divider"></div>
-<p>this is choose </p>
-  <div class="ui vertical divider">
-    content
-  </div>
+<div id="headdesign">
+    {% block header %}
+           <p>this is logo</p>
+           <div class="ui divider"></div>
+    {% endblock %}
+</div>
+
+
+
+
+<div id="container">
+     <div id="navigatedesign">
+         {% block nagigation %}
+             <div class="ui  accordion">
+              <div class="title">
+                <i class="dropdown icon"></i>
+                数据库用户管理
+              </div>
+              <div class="content">
+                <p class="transition hidden">A dog is a type of domesticated animal. </p>
+              </div>
+              <div class="title active">
+                <i class="dropdown icon"></i>
+                数据源管理
+              </div>
+              <div class="content active">
+                <p class="transition visible">There are many breeds of dogs.</p>
+              </div>
+              <div class="title">
+                <i class="dropdown icon"></i>
+                数据库自动审核变更
+              </div>
+              <div class="content">
+                <p><a href="/inputdbsql">数据库审核变更</a></p>
+                <p><a href="/login">用户登录</a></p>
+              </div>
+            </div>
+         {% endblock %}
+     </div>
+     <div id="contentdesign">
+        {% block content %}
+            <p>This is content</p>
+        {% endblock %}
+     </div>
+</div>
+
+
+
+<div id="footerdesign">
+    {% block footer %}
+    <div >
+      <p>© 2016 北京恒昌财富管理有限公司 .荣淮海设计. 保留所有权利.</p>
+    </div>
+    {% endblock %}
+</div>
+
+{% block basecssjs %}
+<script>
+$('.ui.accordion')
+.accordion()
+;
+</script>
+{% endblock %}
+{% block externalcssjs %}
+
+{% endblock %}
+
 </body>
 </html>

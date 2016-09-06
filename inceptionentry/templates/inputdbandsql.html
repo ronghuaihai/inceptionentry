@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}<title>please choose database and input sql</title>{% endblock %}
+{% block content %}
+     {% if form.errors %}
+         <p style="color: red;">
+
+Please correct the error{{ form.errors|pluralize }} below.
+</p>
+{% endif %}
+
+
+          <form action="/inputdbsql/" method="POST" class="ui form"  >
+          <h4 class="ui dividing header">please input sql and choose database</h4>
+           {% csrf_token %}
+          <table>
+
+              {{ form.as_table }}
+
+          </table>
+
+          <button>submit review</button>
+
+          </form>
+{% endblock %}
+
+{% block externalcssjs %}
+    <style type="text/css">
+    ul.errorlist {
+    margin: 0;
+    padding: 0;
+    }
+    .errorlist li {
+    background-color: red;
+    color: white;
+    display: block;
+    font-size: 10px;
+    margin: 0 0 3px;
+    padding: 4px 5px;
+    }
+    </style>
+{% endblock %}

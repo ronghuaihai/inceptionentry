@@ -34,5 +34,8 @@ def current_datetime(request):
 def userlogin(request):
     return render_to_response('login.html', context_instance=RequestContext(request))
 
+def userregister(request):
+    return render_to_response('userregister.html',context_instance=RequestContext(request))
+
 
 

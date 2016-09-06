@@ -13,4 +13,5 @@ urlpatterns = [
     url(r'^dealwithdbsqltext/$',mysqldbviews.dealwithdbsqltext),
     url(r'^testhtml/$',testhtml),
     url(r'^login/$',userlogin),
+    url(r'^userregister/$',userregister),
 ]

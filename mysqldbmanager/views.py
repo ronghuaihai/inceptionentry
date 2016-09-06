@@ -22,10 +22,10 @@ def  inputsqlchoosedbinfo(request):
 #            return render_to_response('showgetteddbsql.html',{'sqltext':sqltext,'mysqldbinfo':mysqldbinfo},context_instance=RequestContext(request))
 #            return HttpResponseRedirect('/dealwith',{''})
         else:
-            return render_to_response('input_dbinfo_sql.html', {'form': form}, context_instance=RequestContext(request))
+            return render_to_response('inputdbandsql.html', {'form': form}, context_instance=RequestContext(request))
     else:
         form = inputdbsqlForm()
-        return render_to_response('input_dbinfo_sql.html', {'form': form}, context_instance=RequestContext(request))
+        return render_to_response('inputdbandsql.html', {'form': form}, context_instance=RequestContext(request))
 
 
 def  dealwithdbsqltext(request):

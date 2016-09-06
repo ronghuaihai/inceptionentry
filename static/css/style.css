@@ -83,7 +83,7 @@ div span #temp:hover {
   background: transparent; }
 
 .footer {
-  position: absolute;
+
   z-index: 999;
   right: 0;
   bottom: 0;
