@@ -68,5 +68,5 @@ def  dealwithdbsqltext(request):
             review_result ='execute sucessful.'
         else:
             review_result='review is passed,no problem.'
-    return render_to_response('dealwithdbsqltext.html', {'sql':sql,'review_result':review_result}, context_instance=RequestContext(request))
+    return render_to_response('revieworexecutesql.html', {'sql':sql,'review_result':review_result}, context_instance=RequestContext(request))
 

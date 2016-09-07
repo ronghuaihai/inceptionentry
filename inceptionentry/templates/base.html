@@ -24,7 +24,7 @@
 <body>
 <div id="headdesign">
     {% block header %}
-           <p>this is logo</p>
+           <p style="align:center;text-align: center;font-size: 18px"><b>欢迎来到恒昌数据库自动审核系统</b> </p>
            <div class="ui divider"></div>
     {% endblock %}
 </div>
@@ -34,29 +34,33 @@
 
 <div id="container">
      <div id="navigatedesign">
-         {% block nagigation %}
+         {% block navigation %}
              <div class="ui  accordion">
-              <div class="title">
+              <div class="title active">
                 <i class="dropdown icon"></i>
                 数据库用户管理
               </div>
-              <div class="content">
-                <p class="transition hidden">A dog is a type of domesticated animal. </p>
+              <div class="content active">
+                <p class="transition visible"><a href="/useradd">添加数据库用户</a> </p>
+                <p class="transition visible"><a href="/">修改用户信息</a> </p>
+                <p class="transition visible"><a href="/">删除用户信息</a> </p>
               </div>
-              <div class="title active">
+              <div class="title ">
                 <i class="dropdown icon"></i>
                 数据源管理
               </div>
-              <div class="content active">
-                <p class="transition visible">There are many breeds of dogs.</p>
+              <div class="content ">
+                <p class="transition hidden"><a href="/">添加数据源</a></p>
+                <p class="transition hidden"><a href="/">修改数据源</a></p>
+                <p class="transition hidden"><a href="/">删除数据源</a></p>
               </div>
               <div class="title">
                 <i class="dropdown icon"></i>
                 数据库自动审核变更
               </div>
-              <div class="content">
-                <p><a href="/inputdbsql">数据库审核变更</a></p>
-                <p><a href="/login">用户登录</a></p>
+              <div class="content ">
+                <p class="transition hidden"><a href="/inputdbsql">数据库审核变更</a></p>
+                <p class="transition hidden"><a href="/login">回滚语句</a></p>
               </div>
             </div>
          {% endblock %}
@@ -88,6 +92,10 @@ $('.ui.accordion')
 {% block externalcssjs %}
 
 {% endblock %}
+
+
+
+
 
 </body>
 </html>

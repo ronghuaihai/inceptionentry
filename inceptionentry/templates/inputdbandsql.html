@@ -1,26 +1,35 @@
 {% extends 'base.html' %}
 {% block title %}<title>please choose database and input sql</title>{% endblock %}
 {% block content %}
-     {% if form.errors %}
-         <p style="color: red;">
 
-Please correct the error{{ form.errors|pluralize }} below.
-</p>
-{% endif %}
+           {% if form.errors %}
+               <p style="color: red;">
+                Please correct the error{{ form.errors|pluralize }} below.
+               </p>
+           {% endif %}
 
-
+         <div class="ui form segment">
           <form action="/inputdbsql/" method="POST" class="ui form"  >
-          <h4 class="ui dividing header">please input sql and choose database</h4>
+          <h4 class="ui dividing header">请输入sql语句并选择数据库</h4>
            {% csrf_token %}
-          <table>
 
-              {{ form.as_table }}
+            <div class="fields">
+                {%for field in form %}
+                <div class="field">
+                    <label >{{ field.label }}</label>
+                    <div class="ui left icon input">{{ field }}</div>
+                {% if field.errors %}<div class="ui pointing label red">{{ field.errors }}</div>{% endif %}
 
-          </table>
+                 </div>
+                {% endfor %}
+
+            </div>
+
 
           <button>submit review</button>
 
           </form>
+         </div>
 {% endblock %}
 
 {% block externalcssjs %}

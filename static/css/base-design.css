@@ -50,15 +50,15 @@
 
 }
 
-#container p a:link {
-	color: green;
+#navigatedesign p a:link {
+	color: black;
 	text-decoration: none;}
-#container p a:visited {
+#navigatedesign p a:visited {
 	color: black;}
-#container p a:hover {
+#navigatedesign p a:hover {
 	color: green;
 	text-decoration: underline;}
-#container p a:active {
+#navigatedesign p a:active {
 	color: darkcyan;}
 
 
