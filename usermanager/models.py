@@ -1,14 +1,14 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from mysqldbmanager.models import Mysqldbinfo
 
 # Create your models here.
-class User(models.Model):
-    mysqldbalias=models.CharField(max_length=50)
-    mysqldbname=models.CharField(max_length=50)
-    mysqldbuser=models.CharField(max_length=50)
-    mysqldbpasswd=models.CharField(max_length=50)
-    mysqldbhost=models.CharField(max_length=50)
-    mysqldbport=models.CharField(max_length=20)
+class generalUser(models.Model):
+    generalUserName=models.CharField(max_length=50)
+    generalUserPassword=models.CharField(max_length=50)
+    generalUserMail=models.CharField(max_length=50)
+    generalUserDatabase=models.ManyToManyField(Mysqldbinfo)
+    generalUserRole=models.CharField(max_length=13)
     def __unicode__(self):
         return u'%s %s %s %s %s' % (self.mysqldbalias,self.mysqldbname,self.mysqldbhost,self.mysqldbname,self.mysqldbport)
